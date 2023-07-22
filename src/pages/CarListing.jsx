@@ -24,6 +24,7 @@ const CarListing = () => {
   };
 
   const sortedCars = sortCars(carData, sortOption);
+
   return (
     <Helmet title="Cars">
       <CommonSection title="Car Listing" />
@@ -37,7 +38,7 @@ const CarListing = () => {
                   <i class="ri-sort-asc"></i> Sort By
                 </span>
 
-                <select value={sortOption} onChange={handleSortChange}>
+                <select value={sortedCars} onChange={handleSortChange}>
                   <option value="">Select</option>
                   <option value="low">Low to High</option>
                   <option value="high">High to Low</option>
