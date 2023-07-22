@@ -34,21 +34,25 @@ const AboutSection = ({ aboutClass }) => {
 
               <div className="about__section-item d-flex align-items-center">
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i> Budget-Friendly Car.
+                  <i className="ri-checkbox-circle-line"></i> Budget-Friendly
+                  Car.
                 </p>
 
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i> Doorstep Car Delivery
+                  <i className="ri-checkbox-circle-line"></i> Doorstep Car
+                  Delivery
                 </p>
               </div>
 
               <div className="about__section-item d-flex align-items-center">
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i> Flexi Weekly Packages.
+                  <i className="ri-checkbox-circle-line"></i> Flexi Weekly
+                  Packages.
                 </p>
 
                 <p className="section__description d-flex align-items-center gap-2">
-                  <i class="ri-checkbox-circle-line"></i> Sedan, Hatchback, SUV
+                  <i className="ri-checkbox-circle-line"></i> Sedan, Hatchback,
+                  SUV
                 </p>
               </div>
             </div>
