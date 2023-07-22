@@ -16,8 +16,8 @@ const BookingForm = () => {
   const [journeyTime, setJourneyTime] = useState("");
   const [comments, setComments] = useState("");
 
-  const submitHandler = (event) => {
-    event.preventDefault();
+  const submitHandler = (e) => {
+    e.preventDefault();
 
     console.log({
       firstName,
