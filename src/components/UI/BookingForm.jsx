@@ -3,7 +3,7 @@ import "../../styles/booking-form.css";
 import { Form, FormGroup } from "reactstrap";
 
 const BookingForm = () => {
-  const [formKey, setFormKey] = useState(0); // Add the formKey state variable
+  const [formKey, setFormKey] = useState(0);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
