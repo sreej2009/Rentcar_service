@@ -26,6 +26,7 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+  const [formKey, setFormKey] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -58,7 +59,7 @@ const Contact = () => {
       setName("");
       setEmail("");
 
-      window.location.reload();
+      setFormKey((prevKey) => prevKey + 1);
     }
   };
   return (
@@ -70,7 +71,7 @@ const Contact = () => {
             <Col lg="7" md="7">
               <h6 className="fw-bold mb-4">Get In Touch</h6>
 
-              <Form onSubmit={submitHandler}>
+              <Form key={formKey} onSubmit={submitHandler}>
                 <FormGroup className="contact__form">
                   <Input
                     placeholder="Your Name"
