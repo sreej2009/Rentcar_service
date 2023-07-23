@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/booking-form.css";
 import { Form, FormGroup } from "reactstrap";
+import Swal from "sweetalert2";
 
 const BookingForm = () => {
   const [formKey, setFormKey] = useState(0);
@@ -56,7 +57,13 @@ const BookingForm = () => {
       setComments("");
 
       setFormKey((prevKey) => prevKey + 1);
-      alert("Thanks For Submiting Your Details");
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Submited Successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
       return;
     }
   };
