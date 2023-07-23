@@ -26,10 +26,9 @@ const socialLinks = [
 ];
 
 const Contact = () => {
-  const [formKey, setFormKey] = useState(0);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
+  const [command, setCommand] = useState(""); // Added the missing 'command' state
   const [formErrors, setFormErrors] = useState({});
 
   const validateForm = () => {
@@ -55,11 +54,11 @@ const Contact = () => {
       console.log({
         name,
         email,
+        command,
       });
       setName("");
       setEmail("");
-
-      setFormKey((prevKey) => prevKey + 1);
+      setCommand("");
     }
   };
   return (
@@ -71,7 +70,7 @@ const Contact = () => {
             <Col lg="7" md="7">
               <h6 className="fw-bold mb-4">Get In Touch</h6>
 
-              <Form key={formKey} onSubmit={submitHandler}>
+              <Form onSubmit={submitHandler}>
                 <FormGroup className="contact__form">
                   <Input
                     placeholder="Your Name"
