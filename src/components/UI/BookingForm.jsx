@@ -3,6 +3,8 @@ import "../../styles/booking-form.css";
 import { Form, FormGroup } from "reactstrap";
 
 const BookingForm = () => {
+  const [formKey, setFormKey] = useState(0); // Add the formKey state variable
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,7 +20,6 @@ const BookingForm = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    // Perform form validation here
     if (
       !firstName ||
       !lastName ||
@@ -28,42 +29,39 @@ const BookingForm = () => {
       !journeyDate ||
       !journeyTime
     ) {
-      alert("Please fill in all the required fields.");
+      console.log({
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        fromAddress,
+        toAddress,
+        persons,
+        luggages,
+        journeyDate,
+        journeyTime,
+        comments,
+      });
+
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhoneNumber("");
+      setFromAddress("");
+      setToAddress("");
+      setPersons("");
+      setLuggages("");
+      setJourneyDate("");
+      setJourneyTime("");
+      setComments("");
+
+      setFormKey((prevKey) => prevKey + 1);
+      alert("Thanks For Submiting Your Details");
       return;
     }
-
-    console.log({
-      firstName,
-      lastName,
-      email,
-      phoneNumber,
-      fromAddress,
-      toAddress,
-      persons,
-      luggages,
-      journeyDate,
-      journeyTime,
-      comments,
-    });
-
-    // Clear form fields after submission
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPhoneNumber("");
-    setFromAddress("");
-    setToAddress("");
-    setPersons("");
-    setLuggages("");
-    setJourneyDate("");
-    setJourneyTime("");
-    setComments("");
-
-    // Reload the page after successful submission
-    window.location.reload();
   };
   return (
-    <Form onSubmit={submitHandler}>
+    <Form key={formKey} onSubmit={submitHandler}>
       <FormGroup className="booking__form d-inline-block me-4 mb-4">
         <input type="text" placeholder="First Name" required />
       </FormGroup>
