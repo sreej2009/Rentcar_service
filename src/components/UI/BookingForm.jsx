@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import React, { useState } from "react";
 import "../../styles/booking-form.css";
 import { Form, FormGroup } from "reactstrap";
 
@@ -19,6 +18,20 @@ const BookingForm = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
+    // Perform form validation here
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !phoneNumber ||
+      !fromAddress ||
+      !journeyDate ||
+      !journeyTime
+    ) {
+      alert("Please fill in all the required fields.");
+      return;
+    }
+
     console.log({
       firstName,
       lastName,
@@ -32,6 +45,8 @@ const BookingForm = () => {
       journeyTime,
       comments,
     });
+
+    // Clear form fields after submission
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -44,6 +59,7 @@ const BookingForm = () => {
     setJourneyTime("");
     setComments("");
 
+    // Reload the page after successful submission
     window.location.reload();
   };
   return (
